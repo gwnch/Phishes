@@ -1,12 +1,18 @@
 # Phishes
-The information security Slack bot that informs users of the potential security risks, warns when private information may be shared, and provides advice on how to use Slack more securely.
+The information security Slack bot that informs users of the potential security risks, warns users when private information may be shared, and provides advice on how to use Slack more securely.
   
-### Overview of prompts and functions
-Mind map of what users can do, keywords/prompts used, and repsonses.
-![](https://github.com/gwnch/Phishes/blob/master/images/phishes_mind_map.png)
+### All Functions
+Outline of what users can do, prompts used, and repsonses.
+![alt text](https://github.com/gwnch/Phishes/blob/master/images/allfuncts.png)
   
-### Overview of security information
-Mind map of topics included, explanations, and questions. Coming soon.
+### Security Information Basics
+Outline of topics included, explanations, and questions.
+![alt text](https://github.com/gwnch/Phishes/blob/master/images/infosecbasics.png)
   
-### Overview of security warnings
-Mind map of keywords that trigger warning and security reminders. Coming soon.
+### Security Warnings
+Outline of keywords that trigger warnings and security reminders.
+![alt text](https://github.com/gwnch/Phishes/blob/master/images/securitywarnings.png)
+  
+### Future Potential Additions:
+  - add machine learning to better understand user's prompts
+  - create API to generate random facts
