@@ -10,7 +10,12 @@ phishes_id = None
 
 # constants
 RTM_READ_DELAY = 1 # 1 second delay between reading from RTM
-START_COMMAND = "hello"
+HELLO_COMMAND = "hello"
+START_COMMAND = "start"
+INFO_COMMAND = "about"
+FACT_COMMAND = "fact"
+DIS_COMMAND = "dis"
+PROMPTS_COMMAND = "help"
 
 MENTION_REGEX = "^<@(|[WU].+?)>(.*)"
 
@@ -41,14 +46,27 @@ def handle_command(command, channel):
         Executes bot command if command is known or gives help suggestions
     """
     # default response is help text for the user
-    default_response = "Not sure what you mean. Start with a 'hello'!".format(START_COMMAND)
+    default_response = "Not sure what you mean. Start with a 'hello' for an introduction or 'all' to view all prompts.".format(HELLO_COMMAND)
 
     # finds and executes the given command, filling in response
     response = None
 
     # IMPLEMENT MORE COMMANDS HERE
-    if command.startswith(START_COMMAND):
+    if command.startswith(HELLO_COMMAND):
         response = "Hello! Meet Phiona by Phishes. Phiona will train, inform, and warn you of the potential security risks while using Slack."
+
+    if command.startswith(START_COMMAND):
+        response = "Information Security Basics will not begin. Please read along and answer questions based on the the following information."
+
+    if command.startswith(INFO_COMMAND):
+        response = "Phishes is a personal project created by a college student interested in cyber security. PHishes was created to spread awareness of 
+            sharing private information through messaging. The information was collected through Slack's website, news, blog posts, and more."
+
+    if command.startswith(DIS_COMMAND):
+        response = "Phishes is not affiliated with and does not represent the ideas of Slack. Thisis not an all inclusive security information source."
+
+    if command.startswith(PROMPTS_COMMAND):
+        response = "Intro: hello, Information Security Basics: start, More Info: about, Disclaimers: dis, Prompts: all"
 
     # sends the response back to the channel
     slack_client.api_call(
